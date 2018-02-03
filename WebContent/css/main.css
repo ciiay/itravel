@@ -35,7 +35,8 @@ body {
 
 body, input, select, textarea {
 	color: #fff;
-	font-family: "Open Sans", Helvetica, sans-serif;
+	/* font-family: "Open Sans", Helvetica, sans-serif; */
+	font-family: Candara;
 	font-size: 15pt;
 	font-weight: 400;
 	letter-spacing: 0.075em;
@@ -54,12 +55,13 @@ a:hover {
 
 p {
 	margin: 0 0 2em 0;
+	font-size: large;
 }
 
 .user{
 	color: #fff;
 	font-weight: 100;
-	letter-spacing: 0.225em;
+	letter-spacing: 0.225em !important;
 	line-height: 1em;
 	margin: 0 0 1em 0;
 	text-transform: uppercase;
@@ -114,10 +116,12 @@ th, td {
 
 /* Form */
 form {
-	margin-top:0;
+	width: 60%;
+	margin: 80px auto 150px auto;
+	/* margin-top:0;
 	margin-right:150px;
 	margin-bottom:150px;
-	margin-left: 150px;
+	margin-left: 150px; */
 }
 
 label {
@@ -254,7 +258,7 @@ input[type="radio"]+label:before {
 }
 
 ul.icons {
-	cursor: default;
+	cursor: pointer;
 	list-style: none;
 	padding-left: 0;
 }
@@ -262,6 +266,7 @@ ul.icons {
 ul.icons li {
 	display: inline-block;
 	padding: 0 1em 0 0;
+	transform: scale(.8);
 }
 
 ul.icons li:last-child {
@@ -337,6 +342,7 @@ input[type="submit"], input[type="reset"], input[type="button"], button,
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	margin-top: 30px;
 }
 
 input[type="submit"].botton_comment{
@@ -417,7 +423,8 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
 
 .spotlight .image img {
 	border-radius: 0;
-	width: 50%;
+	width: 90%;
+	margin: auto;
 }
 
 .spotlight .content {
@@ -476,8 +483,9 @@ div.main{
 	border:none;
 	padding:0 0 0 15px;
 	margin: 10px 0 20px 20px;
-	background-color: #65A9F6;
+	background-color: #66c2ff;
 	box-sizing: border-box;
+	border-radius: 2px;
 }
 
 
@@ -489,8 +497,9 @@ div.floaty{
 	border:none;
 	padding:0 0 0 15px;
 	margin: 10px 0 20px 20px;
-	background-color: #65A9F6;
+	background-color: #66c2ff;
 	box-sizing: border-box;
+	border-radius: 2px;
 }
 
 .hidden{
@@ -726,7 +735,7 @@ body.is-menu-visible #menu {
 	z-index: 1;
 }
 
-#banner h2:before, #banner h2:after, .user:after,.user:before {
+#banner h2:before, #banner h2:after {
 	transition: width 0.85s ease;
 	transition-delay: 0.25s;
 	background: #fff;
@@ -735,6 +744,17 @@ body.is-menu-visible #menu {
 	height: 2px;
 	position: absolute;
 	width: 100%;
+}
+
+.user:after,.user:before {
+	transition: width 0.85s ease;
+	transition-delay: 0.25s;
+	background: #fff;
+	content: '';
+	display: block;
+	height: 2px;
+	position: absolute;
+	width: 0;
 }
 
 #banner h2:before, .user {
@@ -864,6 +884,18 @@ body.landing #page-wrapper {
 body.landing #footer {
 	background-color: rgba(29, 36, 42, 0.9);
 }
+
+/* table */
+table {
+	width: -webkit-fill-available;
+}
+
+/* explanation */
+#user_name_check, #iscurrentpassmatch, #ismatch {
+	font-size: small;
+	corlor: bisque;
+}
+
 
 /*------------------------------------------------------------RESPONSIVE PART------------------------------------------------------------*/
 @media screen and (max-width: 1680px) {
