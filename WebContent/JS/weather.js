@@ -1,6 +1,7 @@
 "use strict";
 var latitude=0;
 var longitude=0;
+var degDeffer=273.15;
 
 function localization() {
     if (navigator.geolocation) { 
@@ -44,7 +45,7 @@ function getforecast(lat,lng){
 		"APPID": "2cbac0d6282afa096674267c64a8af5c"
 	 }).done(function(data){
 								 
-		 let grades = '&#176;k';
+		 let grades = '&#176;c';
 		 var days = [];
 		 var indx = [];
 		 var count = 0;
@@ -67,10 +68,10 @@ function getforecast(lat,lng){
 			if(indx.length >= 1)
 			{
 				let title = data.city.name + ', ' +data.city.country;
-				content = data.list[indx[0]].main.temp + ' '+ grades;
+				content = Math.floor(data.list[indx[0]].main.temp - degDeffer) + ' '+ grades;
 				let description = '<b>'+data.list[indx[0]].weather[0].main + ' :</b>  ' + data.list[indx[0]].weather[0].description + '<br/><br/>'
-					+ '<b>Temp min:</b>  ' + data.list[indx[0]].main.temp_min +' '+grades +'<br/><br/>' 
-					+ '<b>Temp max:</b>  ' + data.list[indx[0]].main.temp_max +' '+grades + '<br/><br/>' 
+					+ '<b>Temp min:</b>  ' + Math.floor(data.list[indx[0]].main.temp_min - degDeffer) +' '+grades +'<br/><br/>' 
+					+ '<b>Temp max:</b>  ' + Math.floor(data.list[indx[0]].main.temp_max - degDeffer) +' '+grades + '<br/><br/>' 
 					+ '<b>Humidity:</b>  ' + data.list[indx[0]].main.humidity + '<br/><br/>' 
 					+ '<b>Pressure:</b>  ' + data.list[indx[0]].main.pressure;
 				$('#actual').css("visibility","visible");
@@ -82,7 +83,7 @@ function getforecast(lat,lng){
 				if(indx.length >= 2)
 				{
 					let title = new Date(data.list[indx[1]].dt_txt).toString();
-					let description = '<b>'+data.list[indx[1]].main.temp + ' '+ grades + '<b/><br/>' 
+					let description = '<b>'+ Math.floor(data.list[indx[1]].main.temp - degDeffer) + ' '+ grades + '<b/><br/>' 
 						+'<b>'+ data.list[indx[1]].weather[0].description +'<b/>';
 					$('#first').css("visibility","visible");
 					$('#first img').attr("src","http://openweathermap.org/img/w/"+ data.list[indx[1]].weather[0].icon + ".png");
@@ -92,7 +93,7 @@ function getforecast(lat,lng){
 				if(indx.length >= 3)
 				{
 					let title = new Date(data.list[indx[2]].dt_txt).toString();
-					let description = '<b>'+data.list[indx[2]].main.temp + ' '+ grades + '<b/><br/>' 
+					let description = '<b>'+ Math.floor(data.list[indx[2]].main.temp - degDeffer) + ' '+ grades + '<b/><br/>' 
 					+'<b>'+ data.list[indx[2]].weather[0].description +'<b/>';
 					$('#second').css("visibility","visible");
 					$('#second img').attr("src","http://openweathermap.org/img/w/"+ data.list[indx[2]].weather[0].icon + ".png");
@@ -102,7 +103,7 @@ function getforecast(lat,lng){
 				if(indx.length >= 4)
 				{
 					let title = new Date(data.list[indx[3]].dt_txt).toString();
-					let description = '<b>'+data.list[indx[3]].main.temp + ' '+ grades + '<b/><br/>' 
+					let description = '<b>'+ Math.floor(data.list[indx[3]].main.temp - degDeffer) + ' '+ grades + '<b/><br/>' 
 					+'<b>'+ data.list[indx[3]].weather[0].description +'<b/>';
 					$('#third').css("visibility","visible");
 					$('#third img').attr("src","http://openweathermap.org/img/w/"+ data.list[indx[3]].weather[0].icon + ".png");
@@ -112,7 +113,7 @@ function getforecast(lat,lng){
 				if(indx.length >= 5)
 				{
 					let title = new Date(data.list[indx[4]].dt_txt).toString();
-					let description = '<b>'+data.list[indx[4]].main.temp + ' '+ grades + '<b/><br/>' 
+					let description = '<b>'+ Math.floor(data.list[indx[4]].main.temp - degDeffer) + ' '+ grades + '<b/><br/>' 
 					+'<b>'+ data.list[indx[4]].weather[0].description +'<b/>';
 					$('#fourth').css("visibility","visible");
 					$('#fourth img').attr("src","http://openweathermap.org/img/w/"+ data.list[indx[4]].weather[0].icon + ".png");
@@ -122,7 +123,7 @@ function getforecast(lat,lng){
 				if(indx.length >= 6)
 				{
 					let title = new Date(data.list[indx[5]].dt_txt).toString();
-					let description = '<b>'+data.list[indx[5]].main.temp + ' '+ grades + '<b/><br/>' 
+					let description = '<b>'+ Math.floor(data.list[indx[5]].main.temp - degDeffer) + ' '+ grades + '<b/><br/>' 
 					+'<b>'+ data.list[indx[5]].weather[0].description +'<b/>';
 					$('#fifth').css("visibility","visible");
 					$('#fifth img').attr("src","http://openweathermap.org/img/w/"+ data.list[indx[5]].weather[0].icon + ".png");
