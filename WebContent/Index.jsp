@@ -17,6 +17,7 @@
 <link rel="icon" href="http://travellingapp.net/wp-content/uploads/2016/06/favicon-194x194.png" type="image/png" sizes="194x194">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxM39UmYCSuurpCoINutq9Q2kec--RuF0"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="JS/main.js" type="text/javascript"></script>
@@ -28,6 +29,9 @@
 </head>
 <!--<body class="landing is-mobile is-menu-visible">-->
 <body class="landing">
+	<div><a id="totop" href="#">TOP&#8593;</a></div>
+	
+	<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 
@@ -50,6 +54,7 @@
 				</ul>
 			</nav>
 		</header>
+		
 		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
@@ -104,6 +109,8 @@
 				</div>
 			</section>
 		</mytag:simple>
+		
+		
 			<!-- Footer -->
 			<footer id="footer">
 				<ul class="copyright">

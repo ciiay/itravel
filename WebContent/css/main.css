@@ -413,6 +413,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
 	align-items: center;
 	display: flex;
 	background-color: rgba(0, 0, 0, 0.075);
+	padding: 15px;
 }
 
 .spotlight .image {
@@ -614,7 +615,7 @@ vertical-align: right;
 }
 
 body.is-menu-visible #page-wrapper {
-	opacity: 0.35;
+	/* opacity: 0.35; */
 }
 
 body.is-menu-visible #page-wrapper:before {
@@ -894,6 +895,29 @@ table {
 #user_name_check, #iscurrentpassmatch, #ismatch {
 	font-size: small;
 	corlor: bisque;
+}
+
+/* back to top button */
+a#totop {
+	display: none;
+	border-bottom: none;
+	position: fixed;
+	bottom: 20px;
+	right: 40px;
+	color: #f2f2f2;
+	z-index: 1000;
+	padding: 10px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-weight: normal;
+	text-decoration: none !important;
+	transition: all .2s;
+}
+
+a#totop:hover {
+	color: #e6f7ff;
+	transform: scale(1.1);
 }
 
 
