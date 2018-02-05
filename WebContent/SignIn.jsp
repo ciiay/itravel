@@ -6,11 +6,14 @@
 <link rel="icon" href="http://travellingapp.net/wp-content/uploads/2016/06/favicon-194x194.png" type="image/png" sizes="194x194">
 <link rel="stylesheet" href="css/main.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="JS/main.js" type="text/javascript"></script>
 <title>Itravel</title>
 </head>
 <body class="landing">
+
+	<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 		<!-- Header -->

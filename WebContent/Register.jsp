@@ -6,6 +6,7 @@
 <link rel="icon" href="http://travellingapp.net/wp-content/uploads/2016/06/favicon-194x194.png" type="image/png" sizes="194x194">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="JS/main.js" type="text/javascript"></script>
 <script src="JS/checkUser.js" type="text/javascript"></script>
@@ -13,6 +14,7 @@
 </head>
 <body class="landing">
 
+	<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 		<!-- Header -->
@@ -25,8 +27,8 @@
 						<li><a href="Post.jsp">Publish Post</a></li>
 						<li><a href="Weather.html">Check Weather</a></li>
 						<li><a href="Register.jsp">Sign Up</a></li>
-						<c:if test="${sessionScope == null }"><li><a href="SignIn.jsp">Sign In</a></li></c:if>
-						<li><a href="updateUser.jsp">Update Profile</a></li>
+						<%-- <c:if test="${sessionScope == null }"><li><a href="SignIn.jsp">Sign In</a></li></c:if> --%>
+						<!-- <li><a href="updateUser.jsp">Update Profile</a></li> -->
 						<li><a href="SignoutServlet">Sign Out</a></li>
 					</ul>
 				</div></li>

@@ -47,7 +47,8 @@ $(document).ready(function(){
 function w3_close() {
 	$(".close").remove();
 	$('body').removeClass("is-menu-visible");
- document.getElementById("myOverlay").style.display = "none";
+// document.getElementById("myOverlay").style.display = "none";
+ $('#myOverlay').style.display = "none";
 }
 
 
