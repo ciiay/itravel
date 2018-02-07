@@ -4,7 +4,7 @@ $(function() {
 			function(e) {
 				console.log("MENU");
 				
-				document.getElementById("myOverlay").style.display = "block";
+				$("#myOverlay").css("display", "block");
 				
 				// Menu.
 				$('#menu').append('<a href="#menu" class="close"></a>').click(
@@ -13,7 +13,7 @@ $(function() {
 							// Menu.
 							$(".close").remove();
 							$('body').removeClass("is-menu-visible");
-							document.getElementById("myOverlay").style.display = "none";
+							$("#myOverlay").css("display", "none");
 
 						});
 				
@@ -34,10 +34,10 @@ $(document).ready(function(){
 	window.onscroll = function() {scrollFunction()};
 	
 	function scrollFunction() {
-	    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-	        document.getElementById("totop").style.display = "block";
+	    	if ($(window).scrollTop() > 20) {
+	        $("#totop").css("display", "block");
 	    } else {
-	        document.getElementById("totop").style.display = "none";
+	        $("#totop").css("display", "none");
 	    }
 	}
 	
@@ -47,8 +47,7 @@ $(document).ready(function(){
 function w3_close() {
 	$(".close").remove();
 	$('body').removeClass("is-menu-visible");
-// document.getElementById("myOverlay").style.display = "none";
- $('#myOverlay').style.display = "none";
+	$('#myOverlay').css("display", "none");
 }
 
 

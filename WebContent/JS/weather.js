@@ -1,7 +1,7 @@
 "use strict";
 var latitude=0;
 var longitude=0;
-var degDeffer=273.15;
+const degDeffer=273.15;
 
 function localization() {
     if (navigator.geolocation) { 

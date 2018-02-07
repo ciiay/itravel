@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+const degDeffer=273.15;
 
 $(document).ready(function() {
 	$(".fa-location").click(flocation);
@@ -22,9 +22,9 @@ function flocation(event){
 	}).done(function(data){
 	    location = data.name;
 		let weather= data.weather[0];
-		let grades = '&#176;K';
-		let tempMax = data.main.temp_max;
-		let tempMin = data.main.temp_min;
+		let grades = '&#176;c';
+		let tempMax = Math.floor(data.main.temp_max - degDeffer);
+		let tempMin = Math.floor(data.main.temp_min - degDeffer);
 		let humidity=data.main.humidity;
 		let icon= weather.icon;
 		let main= weather.main;
@@ -42,11 +42,11 @@ function flocation(event){
 		+'<div id="weather"></div></div></div>');
 		$("#weather").append('<img id="forecastImg" alt=""/>'+text);
 		$('img#forecastImg').attr("src","http://openweathermap.org/img/w/"+ icon + ".png")
-							.css({"width":"100px",
-							"height":"100px",
+							.css({"width":"80px",
+							"height":"80px",
 							"padding":"0",
 							"background-color":"white",
-							"margin":"10px 48px 30px 48px",
+							"margin":"20px 30px 10px 37px",
 							"border":"none",
 							"border-radius":"50%"});
 		var initialLatLong = new google.maps.LatLng(data.coord.lat,data.coord.lon);
